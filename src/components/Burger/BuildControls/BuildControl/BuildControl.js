@@ -1,5 +1,7 @@
 import react from "react";
 
+import "./BuildControl.css";
+
 const buildControl = (props) => (
   <div className="BuildControl">
     <div className="Label">{props.label}</div>
@@ -7,3 +9,5 @@ const buildControl = (props) => (
     <button className="More">More</button>
   </div>
 );
+
+export default buildControl;
