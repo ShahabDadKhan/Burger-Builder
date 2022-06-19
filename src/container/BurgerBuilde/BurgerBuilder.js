@@ -2,23 +2,25 @@ import { React, Component } from "react";
 import Aux from "../../hoc/aux";
 import Burger from "../../components/Burger/Burger";
 import BuildControls from "../../components/Burger/BuildControls/BuildControls";
+import Modal from "../../components/UI/Modal/Modal";
+import OrderSummery from "../../components/Burger/OrderSummery/OrderSummery";
 
 const INGREDIENT_PRICES = {
-  salad: 0.5,
-  cheese: 0.4,
-  meat: 1.3,
-  bacon: 0.7,
+  salad: 5,
+  cheese: 7,
+  meat: 20,
+  bacon: 3,
 };
 
 class BurgerBuilder extends Component {
   state = {
     ingredients: {
       salad: 1,
-      bacon: 1,
+      bacon: 2,
       cheese: 2,
       meat: 1,
     },
-    totalPrice: 4,
+    totalPrice: 45,
   };
 
   addIngredientHandler = (type) => {
@@ -59,11 +61,13 @@ class BurgerBuilder extends Component {
     };
 
     for (let key in disabledInfo) {
-      console.log("Keys", disabledInfo[key]);
       disabledInfo[key] = disabledInfo[key] <= 0;
     }
     return (
       <Aux>
+        <Modal>
+          <OrderSummery ingredients={this.state.ingredients} />
+        </Modal>
         <Burger ingredients={this.state.ingredients} />
         {/* <div>Build Controls</div> */}
         <BuildControls
