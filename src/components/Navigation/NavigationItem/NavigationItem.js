@@ -1,8 +1,8 @@
 import "./NavigationItem.css";
 
 const navigationItem = (props) => (
-  <li className="navigationItem">
-    <a href={props.link} className={props.active ? active : null}>
+  <li className="NavigationItem">
+    <a href={props.link} className={props.active ? "active" : null}>
       {props.children}
     </a>
   </li>
