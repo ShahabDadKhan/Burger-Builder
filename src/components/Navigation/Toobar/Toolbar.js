@@ -1,9 +1,10 @@
+import Logo from "../../Logo/Logo";
 import "./Toobar.css";
 
 const toolbar = (props) => (
   <header className="Toolbar">
     <div>MENU</div>
-    <div>LOGO</div>
+    <Logo />
     <nav>...</nav>
   </header>
 );
