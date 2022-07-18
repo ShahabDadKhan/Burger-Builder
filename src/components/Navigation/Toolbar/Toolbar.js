@@ -1,12 +1,14 @@
 import Logo from "../../Logo/Logo";
-import "./Toobar.css";
+import "./Toolbar.css";
 import NavigationItems from "../NavigationItems/NavigationItems";
 
 const toolbar = (props) => (
   <header className="Toolbar">
-    <div>MENU</div>
-    <Logo />
-    <NavigationItems />
+    <div onClick={props.open}>MENU</div>
+    <Logo height="60%" />
+    <nav className="DesktopOnly">
+      <NavigationItems />
+    </nav>
     {/* <navigationItems></navigationItems> */}
     {/* <nav>...</nav> */}
   </header>

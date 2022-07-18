@@ -1,5 +1,5 @@
 import { React, Component } from "react";
-import Aux from "../../hoc/aux";
+import Aux from "../../hoc/AUX/aux";
 import Burger from "../../components/Burger/Burger";
 import BuildControls from "../../components/Burger/BuildControls/BuildControls";
 import Modal from "../../components/UI/Modal/Modal";
@@ -27,7 +27,6 @@ class BurgerBuilder extends Component {
 
   purchasingHandler = () => {
     this.setState({ purchasing: !this.state.purchasing });
-    console.log("Purchesed", this.state.purchasing);
   };
 
   purchasContinueHandler = () => {
