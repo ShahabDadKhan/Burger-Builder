@@ -5,7 +5,7 @@ import Backdrop from "../BackDrop/BackDrop";
 
 class Modal extends Component {
   shouldComponentUpdate(nextProps, nextState) {
-    return nextProps.show !== this.props.show;
+    return nextProps.show !== this.props.show || nextProps.children !== this.props.children;
   }
 
   componentDidUpdate() {
@@ -15,7 +15,7 @@ class Modal extends Component {
   render() {
     return (
       <Aux>
-        <Backdrop show={this.props.show} />
+        <Backdrop show={this.props.show} clicked={this.props.modalClosed}/>
         <div
           className="Modal"
           style={{
